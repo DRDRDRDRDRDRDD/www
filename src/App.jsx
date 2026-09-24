@@ -171,6 +171,25 @@ function App() {
       )}
     </>
   )
+  
+    function send(metric) {
+      const body = {
+        name: metric.name,        // LCP, INP, CLS, FCP, TTFB
+        value: metric.value,      // число
+        rating: metric.rating,    // good / needs-improvement / poor
+        url: location.href,       // URL страницы
+        timestamp: Date.now(),    // время замера
+        device: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop' // опционально
+      };
+
+      const endpoint = 'https://webhook.site/8dd3fd87-8725-491e-93a7-c1163191104d';
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(endpoint, JSON.stringify(body));
+      } else {
+        console.log('web-vitals:', body);
+      }
+    }
 }
 
 export default App
