@@ -1,0 +1,49 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-button {
+    background-color: var(--card-bg);
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.nav-button img {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-button:hover {
+    background-color: var(--pag-hover);
+}
+
+.page-button {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.page-button:hover,
+.page-button.active {
+    background-color: var(--pag-hover) !important;
+    font-weight: bold;
+}
+
+.page-button:disabled {
+    cursor: default;
+    opacity: 0.3;
+}

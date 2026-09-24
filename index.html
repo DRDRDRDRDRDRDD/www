@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>painting-gallery</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module">
+    import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.js';
+    onLCP(send);
+    onINP(send, { reportAllChanges: true });
+    onCLS(send);
+    onFCP(send);
+    onTTFB(send);
+
+    function send(metric) {
+      const body = {
+        name: metric.name,        // LCP, INP, CLS, FCP, TTFB
+        value: metric.value,      // число
+        rating: metric.rating,    // good / needs-improvement / poor
+        url: location.href,       // URL страницы
+        timestamp: Date.now(),    // время замера
+        device: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop' // опционально
+      };
+
+      const endpoint = 'https://webhook.site/ваш-уникальный-id';
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(endpoint, JSON.stringify(body));
+      } else {
+        console.log('web-vitals:', body);
+      }
+    }
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

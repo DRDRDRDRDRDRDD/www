@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./styles/webfonts/Urbanist-Bold.woff2') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant SC';
+    src: url('./styles/webfonts/Urbanist-Medium.woff2') format('truetype');
+    font-display: swap;
+}
+
+.filter-group .lab label,
+.img-info-name p:first-child,
+.img-info-location p:first-child,
+.lab label,
+[style*="font-weight: 100"] {
+    font-family: 'Cormorant SC', 'Times New Roman', serif !important;
+}
+
+body,
+button,
+input,
+select,
+.img-info .num,
+.search-container input,
+.nav input,
+.sett,
+.btn-show,
+.btn-clear {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}

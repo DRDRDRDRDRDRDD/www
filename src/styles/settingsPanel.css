@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sett {
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 30px 20px 0 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+body.theme-dark .sett {
+    background-color: #121212;
+}
+
+body.theme-light .sett {
+    background-color: #FFFFFF;
+}
+
+.sett-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-sett {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+body.theme-dark .close-sett {
+    color: white;
+    background-color: #121212;
+}
+
+body.theme-light .close-sett {
+    color: black;
+    background-color: #FFFFFF;
+}
+
+.close-sett:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.close-sett img {
+    width: 20px;
+}
+
+body.theme-light .close-sett img {
+    filter: invert(1);
+}
+
+.filter-group {
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+}
+
+.lab {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+body.theme-dark .lab {
+    color: white;
+}
+
+body.theme-light .lab {
+    color: black;
+}
+
+.lab .icon {
+    font-size: 22px;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+    width: 28px;
+    text-align: center;
+}
+
+.filter-content {
+    margin-top: 15px;
+    transition: all 0.2s;
+}
+
+.artistFilter {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    outline: none;
+}
+
+body.theme-dark .artistFilter {
+    background-color: #1A1818;
+    color: #ddd;
+}
+
+body.theme-light .artistFilter {
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+.locationFilter {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    outline: none;
+}
+
+body.theme-dark .locationFilter {
+    background-color: #1A1818;
+    color: #ddd;
+}
+
+body.theme-light .locationFilter {
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+.years-group {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.years-group img {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+body.theme-light .years-group img {
+    filter: invert(1);
+}
+
+.years-group input {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+body.theme-dark .years-group input {
+    background-color: #1A1818;
+    color: white;
+}
+
+body.theme-light .years-group input {
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+.years-group input::placeholder {
+    color: #888;
+}
+
+.filter-actions {
+    display: flex;
+    position: sticky;
+    bottom: 30px;
+    padding: 15px 0;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 150px;
+}
+
+body.theme-dark .filter-actions {
+    background-color: #121212;
+}
+
+body.theme-light .filter-actions {
+    background-color: #FFFFFF;
+}
+
+.btn-show {
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.theme-dark .btn-show {
+    color: rgb(189, 189, 189);
+}
+
+body.theme-light .btn-show {
+    color: #575757;
+}
+
+.btn-show:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.btn-clear {
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #888;
+}
+
+.btn-clear:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .sett {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sett {
+        padding: 30px 40px 0 40px;
+    }
+}
